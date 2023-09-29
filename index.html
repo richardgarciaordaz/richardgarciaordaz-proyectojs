@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Excusas</title>
+  </head>
+  <body>
+    <button id="generateExcuse">Generar Excusa</button>
+    <p id="excuse"></p>
+
+    <script src="script.js">
+
+      function generateExcuse() {
+          let randomWho = who[Math.floor(Math.random() * who.length)];
+          let randomAction = action[Math.floor(Math.random() * action.length)];
+          let randomWhat = what[Math.floor(Math.random() * what.length)];
+          let randomWhen = when[Math.floor(Math.random() * when.length)];
+
+          let excuse = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}.`;
+
+          document.getElementById("excuse").textContent = excuse;
+
+          document.getElementById("generateExcuse").addEventListener("click", generateExcuse);
+
+      }
+    </script>
+  </body>
+</html>
